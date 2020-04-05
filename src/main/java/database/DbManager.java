@@ -1096,6 +1096,7 @@ public class DbManager implements DbRules {
         }
         return count;
     }
+
     public int getAnswersB() {
         int count = 0;
         try {
@@ -1112,6 +1113,7 @@ public class DbManager implements DbRules {
         }
         return count;
     }
+
     public int getAnswersC() {
         int count = 0;
         try {
@@ -1121,6 +1123,23 @@ public class DbManager implements DbRules {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 count = resultSet.getInt("COUNT(*)");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    public int getCount() {
+        int count = 0;
+        try {
+            Connection connection = createConnection();
+            PreparedStatement statement = connection.prepareStatement(
+                    "SELECT COUNT(ID) FROM RESULTS");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                count = resultSet.getInt("COUNT(ID)");
 
             }
         } catch (SQLException e) {

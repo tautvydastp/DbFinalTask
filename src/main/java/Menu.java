@@ -78,6 +78,9 @@ public class Menu {
                     case "17":
                         System.out.println("C variantu pasirinkta kartu: " + dbManager.getAnswersC());
                         break;
+                    case "18":
+                        System.out.println("Is viso klausimynai buvo spresti kartu: " + dbManager.getCount());
+                        break;
                     case "0":
                         System.out.println("BYE BYE");
                         break;
@@ -146,6 +149,7 @@ public class Menu {
                 "\n[15] Paziureti kiek is viso kartu buvo pasirinkta 'A'" +
                 "\n[16] Paziureti kiek is viso kartu buvo pasirinkta 'B'" +
                 "\n[17] Paziureti kiek is viso kartu buvo pasirinkta 'C'" +
+                "\n[18] Paziureti kiek is viso kartu buvo spresti klausimynai'" +
                 "\n[0] Atsijungti");
     }
 
