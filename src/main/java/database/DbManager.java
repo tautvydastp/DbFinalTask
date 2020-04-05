@@ -1070,7 +1070,7 @@ public class DbManager implements DbRules {
             while (resultSet.next()) {
                 count = resultSet.getInt("COUNT(ANSWER_CHOICE)");
             }
-            while (resultSet1.next()){
+            while (resultSet1.next()) {
                 count2 = resultSet1.getInt("COUNT(ANSWER_CHOICE)");
             }
             averageCount = (count / count2) * 100;
@@ -1080,6 +1080,54 @@ public class DbManager implements DbRules {
         return averageCount;
     }
 
+    public int getAnswersA() {
+        int count = 0;
+        try {
+            Connection connection = createConnection();
+            PreparedStatement statement = connection.prepareStatement(
+                    "SELECT COUNT(*) FROM RESULTS WHERE ANSWER_CHOICE = 'A';");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                count = resultSet.getInt("COUNT(*)");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    public int getAnswersB() {
+        int count = 0;
+        try {
+            Connection connection = createConnection();
+            PreparedStatement statement = connection.prepareStatement(
+                    "SELECT COUNT(*) FROM RESULTS WHERE ANSWER_CHOICE = 'B';");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                count = resultSet.getInt("COUNT(*)");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    public int getAnswersC() {
+        int count = 0;
+        try {
+            Connection connection = createConnection();
+            PreparedStatement statement = connection.prepareStatement(
+                    "SELECT COUNT(*) FROM RESULTS WHERE ANSWER_CHOICE = 'C';");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                count = resultSet.getInt("COUNT(*)");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
 }
 
 

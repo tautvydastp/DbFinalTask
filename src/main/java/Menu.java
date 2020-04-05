@@ -1,3 +1,4 @@
+import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
 import database.DbManager;
 import entities.User;
 
@@ -7,7 +8,6 @@ import java.util.Scanner;
 public class Menu {
     private static Scanner scanner = new Scanner(System.in);
     private static DbManager dbManager = new DbManager();
-    private static User user = new User();
 
 
     public static void runMenu() {
@@ -68,6 +68,15 @@ public class Menu {
                     case "14":
                         System.out.println("Teisingu atsakymu vidurkis procentais: "
                                 + dbManager.getAverageCorrectAnswersCount());
+                        break;
+                    case "15":
+                        System.out.println("A variantu pasirinkta kartu: " + dbManager.getAnswersA());
+                        break;
+                    case "16":
+                        System.out.println("B variantu pasirinkta kartu: " + dbManager.getAnswersB());
+                        break;
+                    case "17":
+                        System.out.println("C variantu pasirinkta kartu: " + dbManager.getAnswersC());
                         break;
                     case "0":
                         System.out.println("BYE BYE");
@@ -134,6 +143,9 @@ public class Menu {
                 "\n[12] Paziureti kiek is viso buvo teisingai atsakyta matematikos klausimu" +
                 "\n[13] Paziureti kiek is viso buvo teisingai atsakyta lietuviu klausimu" +
                 "\n[14] Paziureti teisingu atsakymu procenta" +
+                "\n[15] Paziureti kiek is viso kartu buvo pasirinkta 'A'" +
+                "\n[16] Paziureti kiek is viso kartu buvo pasirinkta 'B'" +
+                "\n[17] Paziureti kiek is viso kartu buvo pasirinkta 'C'" +
                 "\n[0] Atsijungti");
     }
 
